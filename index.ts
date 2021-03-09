@@ -71,7 +71,6 @@ app.delete('/reset', (req, res) => {
 
 app.get('/me', (req, res) => {
   res.send("<h1>Hello my PC</h1>");
-  res.json({message:"<h1>Hello my PC</h1>"});
 })
 
 app.get('/demo', (req, res) => {
