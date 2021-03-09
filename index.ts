@@ -22,9 +22,10 @@ app.post('/login',
 
     const { username, password } = req.body
     // Use username and password to create token.
-
     return res.status(200).json({
       message: 'Login succesfully',
+      id: 1,usermane:"job",password:"1234",
+      
     })
   })
 
@@ -43,6 +44,7 @@ app.get('/balance',
     }
     catch (e) {
       //response in case of invalid token
+      res.status(404).json({message:"user not found"});
     }
   })
 
@@ -62,14 +64,14 @@ app.post('/withdraw',
 app.delete('/reset', (req, res) => {
 
   //code your database reset here
-  
   return res.status(200).json({
     message: 'Reset database successfully'
   })
 })
 
 app.get('/me', (req, res) => {
-  
+  res.send("<h1>Hello my PC</h1>");
+  res.json({message:"<h1>Hello my PC</h1>"});
 })
 
 app.get('/demo', (req, res) => {
